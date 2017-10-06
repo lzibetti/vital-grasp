@@ -22,7 +22,7 @@ import axios from "axios";
 
 export function getResources() {
     return (dispatch) => {
-        axios.get("http://localhost:8080/resources/")
+        axios.get("/resources/")
             .then((response) => {
                 dispatch(setResources(response.data.data))
             }).catch((error) => {
@@ -32,7 +32,7 @@ export function getResources() {
 }
 export function postResources(data) {
     return (dispatch) => {
-        axios.post("http://localhost:8080/resources/", data)
+        axios.post("/resources/", data)
             .then((response) => {
                 dispatch(getResources())
             }).catch((error) => {
@@ -42,7 +42,7 @@ export function postResources(data) {
 }
 export function editResources(id, data) {
     return (dispatch) => {
-        axios.put(`http://localhost:8080/resources/${id}`)
+        axios.put(`/resources/${id}`)
             .then((response) => {
                 dispatch(getResources)
             }).catch((error) => {
@@ -52,7 +52,7 @@ export function editResources(id, data) {
 }
 export function deleteResources(id) {
     return (dispatch) => {
-        axios.delete(`http://localhost:8080/resources/${id}`)
+        axios.delete(`/resources/${id}`)
             .then((response) => {
                 dispatch(getResources)
             }).catch((error) => {
@@ -70,7 +70,7 @@ export function setResources(data) {
 // Contact functions to manipulate the contacts collection
 export function getContacts() {
     return (dispatch) => {
-        axios.get("http://localhost:8080/contacts/")
+        axios.get("/contacts/")
             .then((response) => {
                 dispatch(setContacts(response))
             }).catch((error) => {
@@ -80,7 +80,7 @@ export function getContacts() {
 }
 export function postContacts(data) {
     return (dispatch) => {
-        axios.post("http://localhost:8080/contacts/", data)
+        axios.post("/contacts/", data)
             .then((response) => {
                 dispatch(getContacts)
             }).catch((error) => {
@@ -90,7 +90,7 @@ export function postContacts(data) {
 }
 export function editContacts(id, data) {
     return (dispatch) => {
-        axios.put(`http://localhost:8080/contacts/${id}`)
+        axios.put(`/contacts/${id}`)
             .then((response) => {
                 dispatch(getContacts)
             }).catch((error) => {
@@ -100,7 +100,7 @@ export function editContacts(id, data) {
 }
 export function deleteContacts(id) {
     return (dispatch) => {
-        axios.delete(`http://localhost:8080/contacts/${id}`)
+        axios.delete(`/contacts/${id}`)
             .then((response) => {
                 dispatch(getContacts)
             }).catch((error) => {
